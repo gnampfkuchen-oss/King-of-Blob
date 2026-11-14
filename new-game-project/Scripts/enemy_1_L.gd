@@ -15,7 +15,9 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "player":
+	if body.name == "Player":
 		$AnimatedSprite2D.play("smashed")
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.2).timeout
+		speed = 0
+		await get_tree().create_timer(0.3).timeout
 		queue_free()
