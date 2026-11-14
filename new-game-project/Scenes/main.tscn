@@ -22,7 +22,7 @@ scale = Vector2(59.207085, -1.9795862)
 shape = SubResource("RectangleShape2D_23856")
 
 [node name="Spawner L" type="Node2D" parent="." unique_id=1427597293]
-position = Vector2(-97, 644)
+position = Vector2(-100, 640)
 script = ExtResource("1_bo1nx")
 spawn_scene = ExtResource("3_jjvhh")
 
@@ -33,7 +33,7 @@ autostart = true
 position = Vector2(553, 135)
 
 [node name="Spawner R" type="Node2D" parent="." unique_id=526468442]
-position = Vector2(1219, 637)
+position = Vector2(1219, 640)
 script = ExtResource("1_bo1nx")
 spawn_scene = ExtResource("5_kry3j")
 
