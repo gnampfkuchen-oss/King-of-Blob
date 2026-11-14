@@ -9,18 +9,16 @@ height = 20.52287
 
 [sub_resource type="QuadMesh" id="QuadMesh_ncnld"]
 
-[node name="enemy1" type="Node2D" unique_id=217863729]
+[node name="enemy1" type="Area2D" unique_id=326283436]
 script = ExtResource("1_mxdow")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=933483089]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1355255707]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1355255707]
 position = Vector2(0, -7.0000005)
 scale = Vector2(2.0442133, 2.2414021)
 shape = SubResource("CapsuleShape2D_013or")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1293572641]
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(50, 50)
 mesh = SubResource("QuadMesh_ncnld")
 texture = ExtResource("1_ld55o")
