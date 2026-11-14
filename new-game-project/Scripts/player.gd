@@ -49,6 +49,10 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("enemy2"):
 		bouncefunc(750)
 		point.emit()
+	elif area.is_in_group("enemy3"):
+		bouncefunc(600)
+		point.emit()
+		
 
 func clamp_to_screen() -> void:
 	var rect := get_viewport_rect()

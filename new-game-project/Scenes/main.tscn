@@ -4,12 +4,12 @@
 [ext_resource type="Script" uid="uid://bwvoxbo47p66a" path="res://Scripts/spawner_l.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ccfhqh8b837fa" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://dbtxw1jpbbb5i" path="res://Scenes/ui.tscn" id="2_21xkr"]
-[ext_resource type="PackedScene" uid="uid://c07eiywdvsvnd" path="res://Scenes/enemy1_L.tscn" id="3_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://cv7dj1nk36a6y" path="res://Scenes/enemy2_R.tscn" id="4_hptm8"]
-[ext_resource type="PackedScene" uid="uid://do04qfoagwmj6" path="res://Scenes/enemy3_R.tscn" id="5_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://f060nnwkta4y" path="res://Scenes/enemy1_R.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://cciumh5q0bcnf" path="res://Scenes/enemy2_L.tscn" id="8_6iyac"]
-[ext_resource type="PackedScene" uid="uid://b883yfm6et4hi" path="res://Scenes/enemy3_L.tscn" id="9_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://dtxe5r7b5w4ya" path="res://Scenes/enemy1_L.tscn" id="3_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://dgiqwu80istkr" path="res://Scenes/enemy2_R.tscn" id="4_hptm8"]
+[ext_resource type="PackedScene" uid="uid://dea5lq7tslo68" path="res://Scenes/enemy3_R.tscn" id="5_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://dpwnkptxjmhuh" path="res://Scenes/enemy1_R.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://b4votsl1qhwnv" path="res://Scenes/enemy2_L.tscn" id="8_6iyac"]
+[ext_resource type="PackedScene" uid="uid://bp0gnlblxc7ox" path="res://Scenes/enemy3_L.tscn" id="9_fdnlq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
 size = Vector2(24.75, 14)
