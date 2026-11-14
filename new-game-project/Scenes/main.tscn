@@ -21,12 +21,12 @@ script = ExtResource("1_8gbba")
 [node name="Arena" type="StaticBody2D" parent="." unique_id=1277637875]
 
 [node name="ground" type="CollisionShape2D" parent="Arena" unique_id=302052746]
-position = Vector2(576, 625.99994)
+position = Vector2(578, 640)
 scale = Vector2(59.207085, -1.9795862)
 shape = SubResource("RectangleShape2D_23856")
 
 [node name="Spawner L" type="Node2D" parent="." unique_id=1427597293]
-position = Vector2(-100, 550)
+position = Vector2(-100, 600)
 script = ExtResource("1_bo1nx")
 spawn_scene1 = ExtResource("3_jjvhh")
 spawn_scene2 = ExtResource("8_6iyac")
@@ -39,7 +39,7 @@ autostart = true
 position = Vector2(550, 159.055)
 
 [node name="Spawner R" type="Node2D" parent="." unique_id=526468442]
-position = Vector2(1219, 550)
+position = Vector2(1219, 600)
 script = ExtResource("1_bo1nx")
 spawn_scene1 = ExtResource("5_kry3j")
 spawn_scene2 = ExtResource("4_hptm8")

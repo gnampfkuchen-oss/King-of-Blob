@@ -37,7 +37,6 @@ func bouncefunc(force):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Arena":
 		get_tree().call_deferred("reload_current_scene")
-
 		#position = Vector2(550, 180)
 		#velocity.y = 0
 		#gravity = 0
