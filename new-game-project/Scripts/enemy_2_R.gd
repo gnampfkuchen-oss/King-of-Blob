@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	$AnimatedSprite2D.flip_h = true
 	$AnimatedSprite2D.play("default")
-	speed = randf_range(-100, -200)
+	speed = randf_range(-200, -300)
 	await get_tree().create_timer(20.0).timeout
 	queue_free()
 
