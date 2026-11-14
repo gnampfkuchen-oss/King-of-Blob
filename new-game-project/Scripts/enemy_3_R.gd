@@ -19,18 +19,19 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		var szene = load("res://Scenes/enemy1_R.tscn")
+		var szene1 = load("res://Scenes/enemy1_R.tscn")
+		var szene2 = load("res://Scenes/enemy1_L.tscn")
 		$AnimatedSprite2D.play("smashed")
 		await get_tree().create_timer(0.1).timeout
 		speed = 0
 		await get_tree().create_timer(0.3).timeout
 		
-		var instanz1 = szene.instantiate()
+		var instanz1 = szene1.instantiate()
 		instanz1.name = "enemy1"
 		instanz1.global_position = Vector2(global_position.x, global_position.y + 20)
 		get_parent().call_deferred("add_child", instanz1)
 
-		var instanz2 = szene.instantiate()
+		var instanz2 = szene2.instantiate()
 		instanz2.name = "enemy1"
 		instanz2.global_position = Vector2(global_position.x, global_position.y + 20)
 		get_parent().call_deferred("add_child", instanz2)
