@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://155xx7s6y6ta"]
 
+[ext_resource type="PackedScene" uid="uid://ccfhqh8b837fa" path="res://Scenes/player.tscn" id="1_jjgbg"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
 size = Vector2(1375, 20)
 
@@ -36,3 +38,6 @@ shape = SubResource("RectangleShape2D_k1y1b")
 
 [node name="Spawner L" type="Node2D" parent="." unique_id=1427597293]
 position = Vector2(-684, 309)
+
+[node name="Player" parent="." unique_id=83968270 instance=ExtResource("1_jjgbg")]
+position = Vector2(-126, -32)
