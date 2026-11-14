@@ -23,10 +23,13 @@ func _on_timer_timeout() -> void:
 	var enemy = 1
 	if (num == 1):
 		enemy = spawn_scene1.instantiate()
+		enemy.name = "enemy1"
 	elif (num == 2):
 		enemy = spawn_scene2.instantiate()
+		enemy.name = "enemy2"
 	elif (num == 3):
 		enemy = spawn_scene3.instantiate()
+		enemy.name = "enemy3"
 	enemy.global_position = global_position
 	get_parent().add_child(enemy)
 	start_random_timer()
