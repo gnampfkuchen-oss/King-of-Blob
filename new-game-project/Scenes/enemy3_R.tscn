@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://do04qfoagwmj6"]
 
-[ext_resource type="Script" uid="uid://ddrnvpi8egq4u" path="res://Scripts/enemy_2_R.gd" id="1_kkyjs"]
+[ext_resource type="Script" uid="uid://bmmdwf3emwxgv" path="res://Scripts/enemy_3_R.gd" id="1_pvnoo"]
 [ext_resource type="Texture2D" uid="uid://dge27uo01b3l6" path="res://Assets/Graphics/enemy.png" id="2_j07tp"]
 [ext_resource type="Texture2D" uid="uid://b1g6arokoesth" path="res://Assets/Graphics/enemysmash.png" id="3_86ya5"]
 
@@ -8,18 +8,18 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_j07tp")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("3_86ya5")
 }],
 "loop": 1,
 "name": &"smashed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j07tp")
+}],
+"loop": 1,
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -28,12 +28,12 @@ radius = 18.738272
 height = 37.476543
 
 [node name="enemy2" type="Area2D" unique_id=326283436]
-script = ExtResource("1_kkyjs")
+script = ExtResource("1_pvnoo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1672693132]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_rsguv")
-animation = &"smashed"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1762782164]
 position = Vector2(-7.1525574e-07, 4)

@@ -28,9 +28,9 @@ shape = SubResource("RectangleShape2D_23856")
 [node name="Spawner L" type="Node2D" parent="." unique_id=1427597293]
 position = Vector2(-100, 640)
 script = ExtResource("1_bo1nx")
-spawn_scene1 = ExtResource("5_kry3j")
-spawn_scene2 = ExtResource("4_hptm8")
-spawn_scene3 = ExtResource("5_d1ilt")
+spawn_scene1 = ExtResource("3_jjvhh")
+spawn_scene2 = ExtResource("8_6iyac")
+spawn_scene3 = ExtResource("9_fdnlq")
 
 [node name="Timer" type="Timer" parent="Spawner L" unique_id=955568304]
 autostart = true
@@ -41,9 +41,9 @@ position = Vector2(553, 135)
 [node name="Spawner R" type="Node2D" parent="." unique_id=526468442]
 position = Vector2(1219, 640)
 script = ExtResource("1_bo1nx")
-spawn_scene1 = ExtResource("3_jjvhh")
-spawn_scene2 = ExtResource("8_6iyac")
-spawn_scene3 = ExtResource("9_fdnlq")
+spawn_scene1 = ExtResource("5_kry3j")
+spawn_scene2 = ExtResource("4_hptm8")
+spawn_scene3 = ExtResource("5_d1ilt")
 
 [node name="Timer" type="Timer" parent="Spawner R" unique_id=1694083515]
 autostart = true

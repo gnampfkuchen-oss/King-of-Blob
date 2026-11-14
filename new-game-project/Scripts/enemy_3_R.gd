@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.flip_h = true
-	$AnimatedSprite2D.play("default")
+	$AnimatedSprite2D.play("walk")
 	speed = randf_range(-100, -200)
 	await get_tree().create_timer(20.0).timeout
 	queue_free()
