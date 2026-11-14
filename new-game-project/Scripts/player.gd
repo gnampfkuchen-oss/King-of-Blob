@@ -8,7 +8,7 @@ signal point
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gravity = 0
-	while not Input.is_anything_pressed(): await get_tree().process_frame
+	await get_tree().create_timer(5).timeout
 	gravity = 17
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
