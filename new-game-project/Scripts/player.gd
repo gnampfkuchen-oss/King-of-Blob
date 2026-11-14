@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-var gravity = 8.1
+var gravity = 11
 var speed = 4
+var bounceforce = 400
+var bounce = false
 
 signal dead
 
@@ -16,6 +18,9 @@ func _process(delta: float) -> void:
 		position.x += speed
 	if Input.is_action_pressed("left") and not is_on_floor():
 		position.x -= speed
+	if bounce:
+		velocity.y -= bounceforce
+		bounce = false
 	
 	velocity.y += gravity
 	position += velocity * delta
@@ -24,4 +29,10 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Arena":
-		dead.emit()
+		#dead.emit()
+		bounce = true
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.name == "enemy1":
+		bounce = true
