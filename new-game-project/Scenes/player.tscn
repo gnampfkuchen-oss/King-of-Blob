@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b1fpos4hxvt6r" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://diephcaohucgu" path="res://Assets/Graphics/blob.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://ctb5onwys6mhx" path="res://Assets/Graphics/blobdown.png" id="3_vgqql"]
-[ext_resource type="Texture2D" uid="uid://bvv2ywi6lt1h5" path="res://Assets/Graphics/blobup.png" id="4_fkybt"]
+[ext_resource type="Texture2D" uid="uid://de7uy2eqxw0pp" path="res://Assets/Graphics/blobup.png" id="4_fkybt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejmsa"]
 radius = 36.0
@@ -58,7 +58,6 @@ shape = SubResource("CapsuleShape2D_y6cob")
 position = Vector2(0, -8.999998)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ejmsa")
-animation = &"up"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
