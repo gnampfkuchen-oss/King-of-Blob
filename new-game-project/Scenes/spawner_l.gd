@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	print("koks")
 	var enemy = spawn_scene.instantiate()
 	enemy.global_position = global_position
 	get_parent().add_child(enemy)
