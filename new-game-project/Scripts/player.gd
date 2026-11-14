@@ -22,6 +22,13 @@ func _process(delta: float) -> void:
 		velocity.y -= bounceforce
 		bounce = false
 	
+	if velocity.y > 0:
+		$AnimatedSprite2D.play("down")
+	if velocity.y < 0:
+		$AnimatedSprite2D.play("up")
+	if velocity.y == 0:
+		$AnimatedSprite2D.play("default")
+	
 	velocity.y += gravity
 	position += velocity * delta
 	move_and_slide()
