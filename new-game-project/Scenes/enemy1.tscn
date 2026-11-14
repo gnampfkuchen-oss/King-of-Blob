@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b38rbvh87huf8" path="res://Assets/Graphics/enemy1.png" id="1_ld55o"]
 [ext_resource type="Script" uid="uid://bywbrwv6avdux" path="res://Scenes/enemy_1.gd" id="1_mxdow"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_013or"]
+radius = 10.261435
+height = 20.52287
 
 [sub_resource type="QuadMesh" id="QuadMesh_ncnld"]
 
@@ -13,8 +15,9 @@ script = ExtResource("1_mxdow")
 [node name="Area2D" type="Area2D" parent="." unique_id=933483089]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1355255707]
+position = Vector2(0, -7.0000005)
 scale = Vector2(2.0442133, 2.2414021)
-shape = SubResource("RectangleShape2D_23856")
+shape = SubResource("CapsuleShape2D_013or")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1293572641]
 rotation = 3.1415927

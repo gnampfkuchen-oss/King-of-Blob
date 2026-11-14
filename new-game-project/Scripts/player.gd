@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var gravity = 8.1
 var speed = 4
-var deadbool = false
 
 signal dead
 
@@ -13,11 +12,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if deadbool:
-		speed = 0
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and not is_on_floor():
 		position.x += speed
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") and not is_on_floor():
 		position.x -= speed
 	
 	velocity.y += gravity
@@ -26,7 +23,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "ground":
-		print("dead")
+	if body.name == "Arena":
 		dead.emit()
-		deadbool = true
