@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://f060nnwkta4y" path="res://Scenes/enemy1_R.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cciumh5q0bcnf" path="res://Scenes/enemy2_L.tscn" id="8_6iyac"]
 [ext_resource type="PackedScene" uid="uid://b883yfm6et4hi" path="res://Scenes/enemy3_L.tscn" id="9_fdnlq"]
-[ext_resource type="Texture2D" uid="uid://5m312187sst3" path="res://Assets/Graphics/test.png" id="11_d1ilt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
 size = Vector2(24.75, 14)
@@ -54,11 +53,6 @@ offset_left = -19.0
 offset_top = 19.0
 offset_right = -19.0
 offset_bottom = 19.0
-
-[node name="Test" type="Sprite2D" parent="." unique_id=1580652969]
-position = Vector2(556, 548.99994)
-scale = Vector2(5, 5)
-texture = ExtResource("11_d1ilt")
 
 [connection signal="timeout" from="Spawner L/Timer" to="Spawner L" method="_on_timer_timeout"]
 [connection signal="point" from="Player" to="." method="_on_player_point"]
