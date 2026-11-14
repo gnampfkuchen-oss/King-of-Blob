@@ -11,6 +11,7 @@ height = 20.52287
 
 [node name="enemy1" type="Area2D" unique_id=326283436]
 script = ExtResource("1_mxdow")
+speed = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1355255707]
 position = Vector2(0, -7.0000005)

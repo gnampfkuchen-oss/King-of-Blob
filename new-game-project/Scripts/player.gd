@@ -5,7 +5,7 @@ var speed = 4
 var bounceforce = 400
 var bounce = false
 
-signal dead
+# signal dead
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 	velocity.y += gravity
 	position += velocity * delta
 	move_and_slide()
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
