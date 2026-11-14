@@ -1,6 +1,5 @@
 extends Node2D
 
-var points = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,7 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	$UI/Points/Points.text = str(points)
+	$UI/Points/Points.text = str(Global.points)
 
 
 func _on_player_dead() -> void:
@@ -20,7 +19,7 @@ func _on_player_dead() -> void:
 
 
 func _on_player_point() -> void:
-	points += 1
+	Global.points += 1
 
 
 func _on_ui_restart() -> void:
