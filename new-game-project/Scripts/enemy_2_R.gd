@@ -1,5 +1,6 @@
 extends Area2D
 @export var speed: float = 100.0
+@export var child: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
