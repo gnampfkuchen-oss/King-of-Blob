@@ -18,6 +18,7 @@ script = ExtResource("1_8gbba")
 
 [node name="ground" type="CollisionShape2D" parent="Arena" unique_id=302052746]
 position = Vector2(566, 681)
+scale = Vector2(59.207085, -1.9795862)
 shape = SubResource("RectangleShape2D_23856")
 
 [node name="Spawner L" type="Node2D" parent="." unique_id=1427597293]
