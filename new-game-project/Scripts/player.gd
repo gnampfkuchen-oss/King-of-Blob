@@ -1,9 +1,8 @@
 extends CharacterBody2D
 
-var gravity = 11
+var gravity = 13
 var speed = 4
-var bounceforce = 400
-var bounce = false
+var bounceforce = 450
 
 signal dead
 
@@ -18,9 +17,7 @@ func _process(delta: float) -> void:
 		position.x += speed
 	if Input.is_action_pressed("left") and not is_on_floor():
 		position.x -= speed
-	if bounce:
-		velocity.y -= bounceforce
-		bounce = false
+
 	
 	if velocity.y > 0:
 		$AnimatedSprite2D.play("down")
@@ -34,6 +31,9 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	
 
+func bouncefunc():
+	#velocity 
+	velocity.y = -bounceforce
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Arena":
@@ -41,10 +41,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area.name)
 	if area.name == "enemy1" or area.name.begins_with("@Area2D"):
-		bounce = true
-
-
-func _on_area_2d_area_exited(_area: Area2D) -> void:
-	bounce = false
+		bouncefunc()

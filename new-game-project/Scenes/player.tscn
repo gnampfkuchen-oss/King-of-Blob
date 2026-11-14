@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://de7uy2eqxw0pp" path="res://Assets/Graphics/blobup.png" id="4_fkybt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejmsa"]
-radius = 36.0
+radius = 33.0
 height = 82.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y6cob"]
 radius = 36.0
-height = 92.0
+height = 86.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ejmsa"]
 animations = [{
@@ -51,7 +51,7 @@ shape = SubResource("CapsuleShape2D_ejmsa")
 [node name="Area2D" type="Area2D" parent="." unique_id=1076789463]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=477343732]
-position = Vector2(1, 7)
+position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_y6cob")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=57125959]
@@ -60,5 +60,4 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ejmsa")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
