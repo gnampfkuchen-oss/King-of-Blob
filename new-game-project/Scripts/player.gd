@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var gravity = 18
 var speed = 4
-var bounceforce = 600
 
 signal dead
 signal point
@@ -32,8 +31,8 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	
 
-func bouncefunc():
-	velocity.y = -bounceforce
+func bouncefunc(force):
+	velocity.y = -force
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Arena":
@@ -41,6 +40,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	print(area.name)
 	if area.name == "enemy1" or area.name.begins_with("@Area2D"):
-		bouncefunc()
+		bouncefunc(600)
+		point.emit()
+	if area.name == "enemy2":
+		bouncefunc(750)
 		point.emit()
