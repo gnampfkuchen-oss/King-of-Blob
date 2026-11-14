@@ -8,7 +8,9 @@ signal point
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	gravity = 0
+	while not Input.is_anything_pressed(): await get_tree().process_frame
+	gravity = 18
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,6 +31,7 @@ func _process(delta: float) -> void:
 	velocity.y += gravity
 	position += velocity * delta
 	move_and_slide()
+	clamp_to_screen()
 	
 
 func bouncefunc(force):
@@ -47,3 +50,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "enemy2":
 		bouncefunc(750)
 		point.emit()
+
+func clamp_to_screen() -> void:
+	var rect := get_viewport_rect()
+	position.x = clamp(position.x, 0.0, rect.size.x - 50)

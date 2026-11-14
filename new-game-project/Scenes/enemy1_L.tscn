@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c07eiywdvsvnd"]
+[gd_scene format=3 uid="uid://dtxe5r7b5w4ya"]
 
 [ext_resource type="Script" uid="uid://jlesg55ut38y" path="res://Scripts/enemy_1_L.gd" id="1_c6wa6"]
 [ext_resource type="Texture2D" uid="uid://dge27uo01b3l6" path="res://Assets/Graphics/enemy.png" id="2_7ka68"]
@@ -50,6 +50,5 @@ shape = SubResource("CapsuleShape2D_013or")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=395247352]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_pw11d")
-frame_progress = 0.49320057
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
