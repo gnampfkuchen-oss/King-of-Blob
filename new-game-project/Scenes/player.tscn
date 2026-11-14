@@ -69,7 +69,7 @@ pitch_scale = 1.5
 [node name="lose" type="AudioStreamPlayer" parent="." unique_id=1630463968]
 process_mode = 3
 stream = ExtResource("6_x3wgy")
-volume_db = 17.333
+volume_db = 7.298
 
 [node name="hint" type="Label" parent="." unique_id=137128056]
 offset_left = -161.0

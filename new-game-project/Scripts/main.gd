@@ -13,7 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	$UI/Points/Points.text = str(points)
-	if (points >= 25) and (not spawned):
+	if (points >= 20) and (not spawned):
 		var enemy_instance = BOSS_SCENE.instantiate()
 		enemy_instance.position = Vector2(1000, 600 - 20)
 		add_child(enemy_instance)

@@ -10,7 +10,7 @@ func _ready() -> void:
 	gravity = 0
 	while not Input.is_anything_pressed(): await get_tree().process_frame
 	$hint.hide()
-	gravity = 17
+	gravity = 15
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -47,7 +47,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		bouncefunc(600)
 		point.emit()
 	elif area.is_in_group("enemy2"):
-		bouncefunc(700)
+		bouncefunc(650)
 		point.emit()
 	elif area.is_in_group("enemy3"):
 		bouncefunc(300)
