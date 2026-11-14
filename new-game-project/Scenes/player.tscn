@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://diephcaohucgu" path="res://Assets/Graphics/blob.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://ctb5onwys6mhx" path="res://Assets/Graphics/blobdown.png" id="3_vgqql"]
 [ext_resource type="Texture2D" uid="uid://de7uy2eqxw0pp" path="res://Assets/Graphics/blobup.png" id="4_fkybt"]
+[ext_resource type="AudioStream" uid="uid://beecanm6he4i7" path="res://Assets/Sounds/smash.mp3" id="5_fkybt"]
+[ext_resource type="AudioStream" uid="uid://dlk2uh0q8i5q" path="res://Assets/Sounds/lose.mp3" id="6_x3wgy"]
+[ext_resource type="FontFile" uid="uid://b65vgsjbe3pqt" path="res://Assets/Thin Sans.ttf" id="7_3smsa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejmsa"]
 radius = 36.0
@@ -59,5 +62,24 @@ position = Vector2(0, -8.999998)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_ejmsa")
 
+[node name="smash" type="AudioStreamPlayer" parent="." unique_id=550858879]
+stream = ExtResource("5_fkybt")
+pitch_scale = 1.5
+
+[node name="lose" type="AudioStreamPlayer" parent="." unique_id=1630463968]
+process_mode = 3
+stream = ExtResource("6_x3wgy")
+volume_db = 17.333
+
+[node name="hint" type="Label" parent="." unique_id=137128056]
+offset_left = -161.0
+offset_top = -89.0
+offset_right = 163.0
+offset_bottom = -49.0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("7_3smsa")
+text = "Press any Button to start."
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="lose" to="." method="_on_lose_finished"]

@@ -8,7 +8,8 @@ signal point
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gravity = 0
-	await get_tree().create_timer(5).timeout
+	while not Input.is_anything_pressed(): await get_tree().process_frame
+	$hint.hide()
 	gravity = 17
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,15 +37,12 @@ func bouncefunc(force):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Arena":
-		get_tree().call_deferred("reload_current_scene")
-		#position = Vector2(550, 180)
-		#velocity.y = 0
-		#gravity = 0
-		#while not Input.is_anything_pressed(): await get_tree().process_frame
-		#gravity = 18
+		get_tree().paused = true
+		$lose.play()
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	$smash.play()
 	if area.is_in_group("enemy1"):
 		bouncefunc(600)
 		point.emit()
@@ -62,3 +60,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func clamp_to_screen() -> void:
 	var rect := get_viewport_rect()
 	position.x = clamp(position.x, 0.0, rect.size.x - 50)
+
+
+func _on_lose_finished() -> void:
+	get_tree().paused = false
+	get_tree().call_deferred("reload_current_scene")

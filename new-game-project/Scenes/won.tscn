@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://ctjbxc30ymg44"]
 
-[ext_resource type="Script" uid="uid://435pg33xokjp" path="res://Scripts/won.gd" id="1_jif8x"]
+[ext_resource type="Script" uid="uid://435pg33xokjp" path="res://Scripts/won.gd" id="1_d780e"]
 [ext_resource type="Texture2D" uid="uid://cuk6qiaxgsvlj" path="res://Assets/Graphics/tronesaawon1.png" id="2_d780e"]
 [ext_resource type="Texture2D" uid="uid://bs7yiqvw2637m" path="res://Assets/Graphics/tronesaawon2.png" id="3_3eqmr"]
 [ext_resource type="FontFile" uid="uid://b65vgsjbe3pqt" path="res://Assets/Thin Sans.ttf" id="4_0wrid"]
+[ext_resource type="AudioStream" uid="uid://csfjaw6jhejve" path="res://Assets/Sounds/win.mp3" id="5_d780e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ejmsa"]
 animations = [{
@@ -22,7 +23,7 @@ animations = [{
 [node name="Won" type="Node2D" unique_id=31788702]
 position = Vector2(577.00006, 325.00003)
 scale = Vector2(5, 5)
-script = ExtResource("1_jif8x")
+script = ExtResource("1_d780e")
 
 [node name="Animation" type="AnimatedSprite2D" parent="." unique_id=2146275335]
 position = Vector2(-9.536743e-06, 2.193451e-05)
@@ -39,3 +40,19 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("4_0wrid")
 theme_override_font_sizes/font_size = 14
 text = "You are King of Blob!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=300867352]
+stream = ExtResource("5_d780e")
+volume_db = 10.035
+autoplay = true
+
+[node name="Label2" type="Label" parent="." unique_id=126231077]
+offset_left = -105.8
+offset_top = 47.59999
+offset_right = 106.2
+offset_bottom = 87.59999
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("4_0wrid")
+theme_override_font_sizes/font_size = 5
+text = "A Game by Jurek, Jakob and Elias    Thank you for Playing!"
+horizontal_alignment = 1
