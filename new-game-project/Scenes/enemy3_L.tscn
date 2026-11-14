@@ -31,8 +31,9 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="enemy2" type="Area2D" unique_id=326283436]
+[node name="enemy4" type="Area2D" unique_id=326283436]
 script = ExtResource("1_dvsmb")
+child = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1355255707]
 position = Vector2(-1.0000001, -1)
