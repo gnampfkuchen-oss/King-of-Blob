@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(_body: Node2D) -> void:
+	await get_tree().create_timer(20.0).timeout
 	queue_free()   
