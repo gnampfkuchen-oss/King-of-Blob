@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://f060nnwkta4y" path="res://Scenes/enemy1_R.tscn" id="5_kry3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
-size = Vector2(1375, 20)
+size = Vector2(24.75, 14)
 
 [node name="Main" type="Node2D" unique_id=942728068]
 position = Vector2(19, -19)
@@ -18,6 +18,10 @@ script = ExtResource("1_8gbba")
 
 [node name="ground" type="CollisionShape2D" parent="Arena" unique_id=302052746]
 position = Vector2(566, 681)
+shape = SubResource("RectangleShape2D_23856")
+
+[node name="ground2" type="CollisionShape2D" parent="Arena" unique_id=134617278]
+position = Vector2(550.625, 191)
 shape = SubResource("RectangleShape2D_23856")
 
 [node name="Spawner L" type="Node2D" parent="." unique_id=1427597293]
