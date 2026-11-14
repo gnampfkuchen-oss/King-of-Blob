@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cv7dj1nk36a6y"]
+
+[ext_resource type="Script" uid="uid://ddrnvpi8egq4u" path="res://Scripts/enemy_2_R.gd" id="1_kkyjs"]
+[ext_resource type="Texture2D" uid="uid://dge27uo01b3l6" path="res://Assets/Graphics/enemy.png" id="2_j07tp"]
+[ext_resource type="Texture2D" uid="uid://b1g6arokoesth" path="res://Assets/Graphics/enemysmash.png" id="3_86ya5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsguv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j07tp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_86ya5")
+}],
+"loop": 1,
+"name": &"smashed",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mn6dk"]
+radius = 18.738272
+height = 37.476543
+
+[node name="enemy2" type="Area2D" unique_id=326283436]
+script = ExtResource("1_kkyjs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1672693132]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_rsguv")
+animation = &"smashed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1762782164]
+position = Vector2(-7.1525574e-07, 4)
+scale = Vector2(2.0442133, 2.2414021)
+shape = SubResource("CapsuleShape2D_mn6dk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
