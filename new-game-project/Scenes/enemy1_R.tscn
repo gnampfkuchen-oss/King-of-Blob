@@ -23,3 +23,5 @@ rotation = -3.1415925
 scale = Vector2(50, 50)
 mesh = SubResource("QuadMesh_ncnld")
 texture = ExtResource("2_j07tp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
