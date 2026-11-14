@@ -46,6 +46,7 @@ speed = 200.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279501398]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_rsguv")
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=780927048]
 position = Vector2(-7.1525574e-07, 4)
