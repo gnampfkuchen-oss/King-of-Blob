@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-var gravity = 13
+var gravity = 18
 var speed = 4
-var bounceforce = 450
+var bounceforce = 600
 
 signal dead
 

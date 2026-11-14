@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cidkyo67efp8c" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="Script" uid="uid://bwvoxbo47p66a" path="res://Scripts/spawner_l.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ccfhqh8b837fa" path="res://Scenes/player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://dbtxw1jpbbb5i" path="res://Scenes/ui.tscn" id="2_21xkr"]
 [ext_resource type="PackedScene" uid="uid://c07eiywdvsvnd" path="res://Scenes/enemy1_L.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://f060nnwkta4y" path="res://Scenes/enemy1_R.tscn" id="5_kry3j"]
 
@@ -38,13 +39,11 @@ spawn_scene = ExtResource("5_kry3j")
 [node name="Timer" type="Timer" parent="Spawner R" unique_id=1694083515]
 autostart = true
 
-[node name="Points" type="Label" parent="." unique_id=145173751]
-offset_left = 894.0
+[node name="UI" parent="." unique_id=1071254360 instance=ExtResource("2_21xkr")]
+offset_left = -19.0
 offset_top = 19.0
-offset_right = 961.0
-offset_bottom = 42.0
-scale = Vector2(3.5999975, 2.0650218)
-text = "Points: 0"
+offset_right = -19.0
+offset_bottom = 19.0
 
 [connection signal="timeout" from="Spawner L/Timer" to="Spawner L" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawner R/Timer" to="Spawner R" method="_on_timer_timeout"]
