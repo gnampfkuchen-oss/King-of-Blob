@@ -21,7 +21,7 @@ size = Vector2(1194, 20)
 
 [node name="Arena" type="StaticBody2D" parent="." unique_id=1277637875]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Arena" unique_id=302052746]
+[node name="ground" type="CollisionShape2D" parent="Arena" unique_id=302052746]
 position = Vector2(-5.5, 334)
 shape = SubResource("RectangleShape2D_23856")
 

@@ -6,7 +6,7 @@
 
 [sub_resource type="QuadMesh" id="QuadMesh_ncnld"]
 
-[node name="Node2D" type="Node2D" unique_id=217863729]
+[node name="enemy1" type="Node2D" unique_id=217863729]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=933483089]
 
