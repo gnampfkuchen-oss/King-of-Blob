@@ -3,7 +3,6 @@ extends CharacterBody2D
 var gravity = 18
 var speed = 4
 
-signal dead
 signal point
 
 # Called when the node enters the scene tree for the first time.
@@ -39,7 +38,7 @@ func bouncefunc(force):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Arena":
-		dead.emit()
+		position = Vector2(550, 180)
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

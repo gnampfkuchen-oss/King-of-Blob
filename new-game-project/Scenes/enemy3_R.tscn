@@ -31,7 +31,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="enemy4" type="Area2D" unique_id=326283436]
+[node name="enemy3" type="Area2D" unique_id=326283436]
 script = ExtResource("1_pvnoo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1762782164]

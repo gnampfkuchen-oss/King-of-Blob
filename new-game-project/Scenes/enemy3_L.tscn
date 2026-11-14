@@ -31,7 +31,7 @@ animations = [{
 radius = 25.926846
 height = 51.85369
 
-[node name="enemy4" type="Area2D" unique_id=326283436]
+[node name="enemy3" type="Area2D" unique_id=326283436]
 script = ExtResource("1_dvsmb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=395247352]
