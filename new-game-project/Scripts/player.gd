@@ -41,7 +41,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print(area.name)
-	if area.name == "enemy1" or area.name.begins_with("@Area2D"):
+	if area.name == "enemy1":
 		bouncefunc(600)
 		point.emit()
 	if area.name == "enemy2":
