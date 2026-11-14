@@ -1,26 +1,43 @@
 [gd_scene format=3 uid="uid://c07eiywdvsvnd"]
 
-[ext_resource type="Script" uid="uid://jlesg55ut38y" path="res://Scenes/enemy_1_L.gd" id="1_c6wa6"]
-[ext_resource type="Texture2D" uid="uid://b38rbvh87huf8" path="res://Assets/Graphics/enemy1.png" id="1_ld55o"]
+[ext_resource type="Script" uid="uid://jlesg55ut38y" path="res://Scripts/enemy_1_L.gd" id="1_c6wa6"]
+[ext_resource type="Texture2D" uid="uid://dge27uo01b3l6" path="res://Assets/Graphics/enemy.png" id="2_7ka68"]
+[ext_resource type="Texture2D" uid="uid://b1g6arokoesth" path="res://Assets/Graphics/enemysmash.png" id="3_dw1wm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_013or"]
-radius = 10.261435
-height = 20.52287
+radius = 18.738272
+height = 37.476543
 
-[sub_resource type="QuadMesh" id="QuadMesh_ncnld"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pw11d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7ka68")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dw1wm")
+}],
+"loop": 1,
+"name": &"smashed",
+"speed": 5.0
+}]
 
 [node name="enemy1" type="Area2D" unique_id=326283436]
 script = ExtResource("1_c6wa6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1355255707]
-position = Vector2(0, -7.0000005)
+position = Vector2(-7.1525574e-07, 4)
 scale = Vector2(2.0442133, 2.2414021)
 shape = SubResource("CapsuleShape2D_013or")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1293572641]
-rotation = -3.1415925
-scale = Vector2(50, 50)
-mesh = SubResource("QuadMesh_ncnld")
-texture = ExtResource("1_ld55o")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=395247352]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_pw11d")
+animation = &"smashed"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
