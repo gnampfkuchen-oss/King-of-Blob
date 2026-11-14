@@ -23,7 +23,5 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		if lifes <= 0:
 			$AnimatedSprite2D.play("smashed")
-			await get_tree().create_timer(0.1).timeout
-			speed = 0
 			await get_tree().create_timer(0.3).timeout
-			queue_free()
+			get_tree().change_scene_to_file("res://Scenes/won.tscn")
