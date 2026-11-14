@@ -4,6 +4,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("enemy2")
 	$AnimatedSprite2D.flip_h = true
 	$AnimatedSprite2D.play("walk")
 	speed = randf_range(-200, -300)
