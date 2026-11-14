@@ -18,7 +18,6 @@ func start_random_timer() -> void:
 	timer.start()
 	
 func _on_timer_timeout() -> void:
-	print("spawn")
 	var enemy = spawn_scene.instantiate()
 	enemy.global_position = global_position
 	get_parent().add_child(enemy)
