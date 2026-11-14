@@ -29,4 +29,12 @@ autostart = true
 [node name="Player" parent="." unique_id=83968270 instance=ExtResource("1_jjgbg")]
 position = Vector2(553, 135)
 
+[node name="Points" type="Label" parent="." unique_id=145173751]
+offset_left = 894.0
+offset_top = 19.0
+offset_right = 961.0
+offset_bottom = 42.0
+scale = Vector2(3.5999975, 2.0650218)
+text = "Points: 0"
+
 [connection signal="timeout" from="Spawner L/Timer" to="Spawner L" method="_on_timer_timeout"]
