@@ -49,7 +49,6 @@ spawn_scene3 = ExtResource("5_d1ilt")
 autostart = true
 
 [node name="UI" parent="." unique_id=1071254360 instance=ExtResource("2_21xkr")]
-visible = false
 
 [connection signal="timeout" from="Spawner L/Timer" to="Spawner L" method="_on_timer_timeout"]
 [connection signal="point" from="Player" to="." method="_on_player_point"]

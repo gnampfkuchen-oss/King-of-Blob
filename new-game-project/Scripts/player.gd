@@ -39,10 +39,12 @@ func bouncefunc(force):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Arena":
 		position = Vector2(550, 180)
+		gravity = 0
+		while not Input.is_anything_pressed(): await get_tree().process_frame
+		gravity = 18
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area.get_groups())
 	if area.is_in_group("enemy1"):
 		bouncefunc(600)
 		point.emit()
