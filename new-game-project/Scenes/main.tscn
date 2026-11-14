@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://155xx7s6y6ta"]
 
+[ext_resource type="PackedScene" uid="uid://ccfhqh8b837fa" path="res://Scenes/player.tscn" id="1_jjgbg"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
 size = Vector2(1375, 20)
 
@@ -14,9 +16,8 @@ size = Vector2(1194, 20)
 
 [node name="Main" type="Node2D" unique_id=942728068]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1388006319]
-
 [node name="Arena" type="StaticBody2D" parent="." unique_id=1277637875]
+position = Vector2(575, 326)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Arena" unique_id=302052746]
 position = Vector2(-5.5, 334)
@@ -35,3 +36,7 @@ position = Vector2(0, -335)
 shape = SubResource("RectangleShape2D_k1y1b")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1427597293]
+position = Vector2(-6, -6)
+
+[node name="Player" parent="." unique_id=83968270 instance=ExtResource("1_jjgbg")]
+position = Vector2(244, 136)
