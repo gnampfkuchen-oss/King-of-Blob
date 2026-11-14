@@ -3,6 +3,8 @@ extends CharacterBody2D
 var gravity = 8.1
 var speed = 4
 
+signal dead
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -21,4 +23,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.name == "ground":
+		dead.emit()

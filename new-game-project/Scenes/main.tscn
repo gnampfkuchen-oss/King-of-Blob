@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://155xx7s6y6ta"]
 
-[ext_resource type="Script" uid="uid://qx3sf7aiqood" path="res://Scenes/spawner_l.gd" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://cidkyo67efp8c" path="res://Scripts/main.gd" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://qx3sf7aiqood" path="res://Scripts/spawner_l.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://ccfhqh8b837fa" path="res://Scenes/player.tscn" id="1_jjgbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
@@ -16,6 +17,7 @@ size = Vector2(22, 610)
 size = Vector2(1194, 20)
 
 [node name="Main" type="Node2D" unique_id=942728068]
+script = ExtResource("1_8gbba")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1388006319]
 
