@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://do04qfoagwmj6"]
 
 [ext_resource type="Script" uid="uid://bmmdwf3emwxgv" path="res://Scripts/enemy_3_R.gd" id="1_pvnoo"]
-[ext_resource type="Texture2D" uid="uid://dge27uo01b3l6" path="res://Assets/Graphics/enemy.png" id="2_j07tp"]
 [ext_resource type="Texture2D" uid="uid://b1g6arokoesth" path="res://Assets/Graphics/enemysmash.png" id="3_86ya5"]
+[ext_resource type="Texture2D" uid="uid://c78y3hnj5y7u8" path="res://Assets/Graphics/enemy3.png" id="3_wjtl2"]
+[ext_resource type="Texture2D" uid="uid://c186htaw3stnl" path="res://Assets/Graphics/enemy3walk.png" id="4_fech1"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rsguv"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mn6dk"]
+radius = 18.738272
+height = 37.476543
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrom4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -16,28 +21,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_j07tp")
+"texture": ExtResource("3_wjtl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fech1")
 }],
 "loop": 1,
 "name": &"walk",
-"speed": 5.0
+"speed": 3.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mn6dk"]
-radius = 18.738272
-height = 37.476543
 
 [node name="enemy2" type="Area2D" unique_id=326283436]
 script = ExtResource("1_pvnoo")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1672693132]
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_rsguv")
-animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1762782164]
 position = Vector2(-7.1525574e-07, 4)
 scale = Vector2(2.0442133, 2.2414021)
 shape = SubResource("CapsuleShape2D_mn6dk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1760980456]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_qrom4")
+animation = &"smashed"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
