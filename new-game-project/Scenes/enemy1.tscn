@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c07eiywdvsvnd"]
+
+[ext_resource type="Texture2D" uid="uid://b38rbvh87huf8" path="res://Assets/Graphics/enemy1.png" id="1_ld55o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ncnld"]
+
+[node name="Node2D" type="Node2D" unique_id=217863729]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=933483089]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1355255707]
+shape = SubResource("RectangleShape2D_23856")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1293572641]
+rotation = 3.1415927
+scale = Vector2(50, 50)
+mesh = SubResource("QuadMesh_ncnld")
+texture = ExtResource("1_ld55o")
