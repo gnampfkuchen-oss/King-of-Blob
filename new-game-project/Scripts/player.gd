@@ -54,6 +54,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("enemy3"):
 		bouncefunc(500)
 		point.emit()
+	elif area.is_in_group("boss"):
+		point.emit()
+		bouncefunc(600)
 		
 
 func clamp_to_screen() -> void:

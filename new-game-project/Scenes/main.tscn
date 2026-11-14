@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dpwnkptxjmhuh" path="res://Scenes/enemy1_R.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://b4votsl1qhwnv" path="res://Scenes/enemy2_L.tscn" id="8_6iyac"]
 [ext_resource type="PackedScene" uid="uid://bp0gnlblxc7ox" path="res://Scenes/enemy3_L.tscn" id="9_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://dtf85pya3vhxg" path="res://Scenes/boss.tscn" id="11_d1ilt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
 size = Vector2(24.75, 14)
@@ -49,6 +50,10 @@ spawn_scene3 = ExtResource("5_d1ilt")
 autostart = true
 
 [node name="UI" parent="." unique_id=1071254360 instance=ExtResource("2_21xkr")]
+visible = false
+
+[node name="boss" parent="." unique_id=1086033053 instance=ExtResource("11_d1ilt")]
+position = Vector2(957, 622)
 
 [connection signal="timeout" from="Spawner L/Timer" to="Spawner L" method="_on_timer_timeout"]
 [connection signal="point" from="Player" to="." method="_on_player_point"]
