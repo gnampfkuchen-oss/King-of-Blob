@@ -8,7 +8,7 @@ signal point
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gravity = 0
-	await get_tree().create_timer(5).timeout
+	while not Input.is_anything_pressed(): await get_tree().process_frame
 	gravity = 17
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,7 +56,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		point.emit()
 	elif area.is_in_group("boss"):
 		point.emit()
-		bouncefunc(600)
+		bouncefunc(700)
 		
 
 func clamp_to_screen() -> void:
