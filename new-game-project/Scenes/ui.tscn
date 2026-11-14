@@ -3,7 +3,6 @@
 [ext_resource type="FontFile" uid="uid://b65vgsjbe3pqt" path="res://Assets/Thin Sans.ttf" id="1_jxero"]
 [ext_resource type="Script" uid="uid://c2yqybr8u0cd" path="res://Scripts/ui.gd" id="1_nf4gj"]
 [ext_resource type="Texture2D" uid="uid://ciqkc75xfgten" path="res://Assets/Graphics/menu.png" id="2_qdvrb"]
-[ext_resource type="Texture2D" uid="uid://17xhtwgobxm3" path="res://Assets/Graphics/Restart.png" id="4_2246s"]
 
 [node name="UI" type="CanvasLayer" unique_id=299683093]
 process_mode = 3
@@ -72,26 +71,3 @@ theme_override_font_sizes/font_size = 30
 text = "Upgrades:"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Restart" type="Button" parent="." unique_id=1705159630]
-anchors_preset = -1
-offset_left = 504.0
-offset_top = 512.0
-offset_right = 648.0
-offset_bottom = 600.0
-icon = ExtResource("4_2246s")
-flat = true
-expand_icon = true
-
-[node name="Label" type="Label" parent="Restart" unique_id=2003350923]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 19.0
-offset_right = 132.0
-offset_bottom = 69.0
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("1_jxero")
-theme_override_font_sizes/font_size = 20
-text = "Restart"
-
-[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

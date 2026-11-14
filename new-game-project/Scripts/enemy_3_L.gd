@@ -4,6 +4,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("enemy3")
 	$AnimatedSprite2D.play("walk")
 	speed = randf_range(200, 100)
 	await get_tree().create_timer(20.0).timeout
@@ -17,7 +18,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		print("Hi")
 		var szene = load("res://Scenes/enemy1_L.tscn")
 		$AnimatedSprite2D.play("smashed")
 		await get_tree().create_timer(0.2).timeout
