@@ -39,5 +39,8 @@ shape = SubResource("RectangleShape2D_k1y1b")
 [node name="Spawner L" type="Node2D" parent="." unique_id=1427597293]
 position = Vector2(-684, 309)
 
+[node name="Timer" type="Timer" parent="Spawner L" unique_id=955568304]
+autostart = true
+
 [node name="Player" parent="." unique_id=83968270 instance=ExtResource("1_jjgbg")]
 position = Vector2(-126, -32)
