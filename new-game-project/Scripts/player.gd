@@ -5,6 +5,7 @@ var speed = 4
 var bounceforce = 600
 
 signal dead
+signal point
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -32,7 +33,6 @@ func _process(delta: float) -> void:
 	
 
 func bouncefunc():
-	#velocity 
 	velocity.y = -bounceforce
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -43,3 +43,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.name == "enemy1" or area.name.begins_with("@Area2D"):
 		bouncefunc()
+		point.emit()
