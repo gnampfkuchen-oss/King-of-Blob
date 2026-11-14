@@ -21,7 +21,7 @@ script = ExtResource("1_8gbba")
 [node name="Arena" type="StaticBody2D" parent="." unique_id=1277637875]
 
 [node name="ground" type="CollisionShape2D" parent="Arena" unique_id=302052746]
-position = Vector2(566, 681)
+position = Vector2(576, 625.99994)
 scale = Vector2(59.207085, -1.9795862)
 shape = SubResource("RectangleShape2D_23856")
 
