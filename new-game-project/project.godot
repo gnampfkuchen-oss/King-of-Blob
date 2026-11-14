@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*uid://du61kcsc8xa3f"
+AudioStreamPlayerGlobal="*uid://dsu6oup1v63dy"
 
 [display]
 
