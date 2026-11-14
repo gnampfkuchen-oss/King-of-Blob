@@ -36,7 +36,7 @@ spawn_scene3 = ExtResource("9_fdnlq")
 autostart = true
 
 [node name="Player" parent="." unique_id=83968270 instance=ExtResource("1_jjgbg")]
-position = Vector2(553, 180)
+position = Vector2(550, 180)
 
 [node name="Spawner R" type="Node2D" parent="." unique_id=526468442]
 position = Vector2(1219, 640)
@@ -54,3 +54,4 @@ autostart = true
 [connection signal="dead" from="Player" to="." method="_on_player_dead"]
 [connection signal="point" from="Player" to="." method="_on_player_point"]
 [connection signal="timeout" from="Spawner R/Timer" to="Spawner R" method="_on_timer_timeout"]
+[connection signal="restart" from="UI" to="." method="_on_ui_restart"]

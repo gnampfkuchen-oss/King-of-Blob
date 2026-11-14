@@ -15,8 +15,14 @@ func _process(_delta: float) -> void:
 func _on_player_dead() -> void:
 	$UI/Upgrades.show()
 	$UI/Title.show()
+	$UI/Restart.show()
 	get_tree().paused = true
 
 
 func _on_player_point() -> void:
 	points += 1
+
+
+func _on_ui_restart() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
