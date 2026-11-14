@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dtf85pya3vhxg"]
 
 [ext_resource type="Script" uid="uid://h2up6p68afro" path="res://Scripts/boss.gd" id="1_0154r"]
-[ext_resource type="Texture2D" uid="uid://cfia5imncloob" path="res://Assets/Graphics/enemywalk.png" id="2_cxrok"]
-[ext_resource type="Texture2D" uid="uid://b1g6arokoesth" path="res://Assets/Graphics/enemysmash.png" id="2_ukjjc"]
-[ext_resource type="Texture2D" uid="uid://dge27uo01b3l6" path="res://Assets/Graphics/enemy.png" id="3_ukjjc"]
+[ext_resource type="Texture2D" uid="uid://cjk61igqiwhvs" path="res://Assets/Graphics/bosssmash.png" id="2_ukjjc"]
+[ext_resource type="Texture2D" uid="uid://cesfpyt0kvuqo" path="res://Assets/Graphics/boss.png" id="3_n725y"]
+[ext_resource type="Texture2D" uid="uid://onag7ihm2624" path="res://Assets/Graphics/bosswalk.png" id="4_mh6p8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n725y"]
 radius = 34.0
@@ -26,10 +26,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cxrok")
+"texture": ExtResource("3_n725y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ukjjc")
+"texture": ExtResource("4_mh6p8")
 }],
 "loop": 1,
 "name": &"walk",
@@ -43,6 +43,7 @@ script = ExtResource("1_0154r")
 shape = SubResource("CapsuleShape2D_n725y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1039499288]
+position = Vector2(14.999999, 0)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_0154r")
-animation = &"walk"
+animation = &"smashed"
