@@ -19,17 +19,18 @@ func start_random_timer() -> void:
 	timer.start()
 	
 func _on_timer_timeout() -> void:
-	var num = randi_range(1,3)
-	var enemy = 1
-	if (num == 1):
-		enemy = spawn_scene1.instantiate()
-		enemy.name = "enemy1"
-	elif (num == 2):
-		enemy = spawn_scene2.instantiate()
-		enemy.name = "enemy2"
-	elif (num == 3):
-		enemy = spawn_scene3.instantiate()
-		enemy.name = "enemy3"
-	enemy.global_position = global_position
-	get_parent().add_child(enemy)
-	start_random_timer()
+	if (not get_parent().has_node("boss")):
+		var num = randi_range(1,3)
+		var enemy = 1
+		if (num == 1):
+			enemy = spawn_scene1.instantiate()
+			enemy.name = "enemy1"
+		elif (num == 2):
+			enemy = spawn_scene2.instantiate()
+			enemy.name = "enemy2"
+		elif (num == 3):
+			enemy = spawn_scene3.instantiate()
+			enemy.name = "enemy3"
+		enemy.global_position = global_position
+		get_parent().add_child(enemy)
+		start_random_timer()
