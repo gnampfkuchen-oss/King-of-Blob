@@ -1,5 +1,6 @@
 extends Node2D
 
+var points
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,3 +14,6 @@ func _process(_delta: float) -> void:
 
 func _on_player_dead() -> void:
 	print("tot")
+
+func pointsup():
+	$UI/Points/Pointlabel.text = points

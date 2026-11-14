@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bywbrwv6avdux" path="res://Scripts/enemy_1_R.gd" id="1_loxv4"]
 [ext_resource type="Texture2D" uid="uid://dge27uo01b3l6" path="res://Assets/Graphics/enemy.png" id="2_j07tp"]
 [ext_resource type="Texture2D" uid="uid://b1g6arokoesth" path="res://Assets/Graphics/enemysmash.png" id="3_86ya5"]
+[ext_resource type="Texture2D" uid="uid://cfia5imncloob" path="res://Assets/Graphics/enemywalk.png" id="4_86ya5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rsguv"]
 animations = [{
@@ -21,24 +22,34 @@ animations = [{
 "loop": 1,
 "name": &"smashed",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j07tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_86ya5")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mn6dk"]
-radius = 18.738272
-height = 37.476543
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_86ya5"]
+radius = 15.16476
+height = 33.01505
 
 [node name="enemy1" type="Area2D" unique_id=326283436]
 script = ExtResource("1_loxv4")
 speed = 200.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1672693132]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279501398]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_rsguv")
-animation = &"smashed"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1762782164]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=780927048]
 position = Vector2(-7.1525574e-07, 4)
 scale = Vector2(2.0442133, 2.2414021)
-shape = SubResource("CapsuleShape2D_mn6dk")
+shape = SubResource("CapsuleShape2D_86ya5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://de7uy2eqxw0pp" path="res://Assets/Graphics/blobup.png" id="4_fkybt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejmsa"]
-radius = 33.0
+radius = 36.0
 height = 82.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y6cob"]
-radius = 36.0
-height = 86.0
+radius = 30.0
+height = 72.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ejmsa"]
 animations = [{
