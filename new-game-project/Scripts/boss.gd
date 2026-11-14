@@ -19,9 +19,9 @@ func _process(delta: float) -> void:
 	
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		if (lifes > 0):
-			lifes -= 1
-		else:
+		lifes -= 1
+		
+		if lifes <= 0:
 			$AnimatedSprite2D.play("smashed")
 			await get_tree().create_timer(0.1).timeout
 			speed = 0
