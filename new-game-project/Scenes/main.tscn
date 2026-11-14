@@ -19,7 +19,7 @@ position = Vector2(566, 681)
 shape = SubResource("RectangleShape2D_23856")
 
 [node name="Spawner L" type="Node2D" parent="." unique_id=1427597293]
-position = Vector2(-101, 646)
+position = Vector2(562, 648)
 script = ExtResource("1_bo1nx")
 spawn_scene = ExtResource("3_jjvhh")
 

@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	
 func start_random_timer() -> void:
 	# Neue Zufallszeit festlegen und Timer neu starten
-	timer.wait_time = randf_range(0.5, 2.0)
+	timer.wait_time = randf_range(1, 3.0)
 	timer.start()
 	
 func _on_timer_timeout() -> void:
