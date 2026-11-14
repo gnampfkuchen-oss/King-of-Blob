@@ -11,6 +11,7 @@
 [node name="Area2D" type="Area2D" parent="." unique_id=933483089]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1355255707]
+scale = Vector2(2.0442133, 2.2414021)
 shape = SubResource("RectangleShape2D_23856")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1293572641]
