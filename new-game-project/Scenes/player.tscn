@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://beecanm6he4i7" path="res://Assets/Sounds/smash.mp3" id="5_fkybt"]
 [ext_resource type="AudioStream" uid="uid://dlk2uh0q8i5q" path="res://Assets/Sounds/lose.mp3" id="6_x3wgy"]
 [ext_resource type="FontFile" uid="uid://b65vgsjbe3pqt" path="res://Assets/Thin Sans.ttf" id="7_3smsa"]
+[ext_resource type="AudioStream" uid="uid://dhkfifwa5yrsa" path="res://Assets/Sounds/countdown.mp3" id="7_8erm5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejmsa"]
 radius = 36.0
@@ -71,6 +72,9 @@ process_mode = 3
 stream = ExtResource("6_x3wgy")
 volume_db = 7.298
 
+[node name="Countdown" type="AudioStreamPlayer" parent="." unique_id=84333947]
+stream = ExtResource("7_8erm5")
+
 [node name="hint" type="Label" parent="." unique_id=137128056]
 offset_left = -161.0
 offset_top = -89.0
@@ -83,3 +87,4 @@ text = "Press any Button to start."
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="finished" from="lose" to="." method="_on_lose_finished"]
+[connection signal="finished" from="Countdown" to="." method="_on_countdown_finished"]
