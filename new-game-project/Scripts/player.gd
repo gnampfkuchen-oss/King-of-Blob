@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 var gravity = 0
 var speed = 10
+var damage = 5
 
-signal point
+signal point(pointss: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,23 +38,26 @@ func bouncefunc(force):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Arena":
-		get_tree().paused = true
 		$lose.play()
+		position = Vector2(550, 159.055)
+		velocity.y = 0
+		point.emit(-5 * damage)
+		gravity = 0
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	$smash.play()
 	if area.is_in_group("enemy1"):
 		bouncefunc(600)
-		point.emit()
+		point.emit(1 * damage)
 	elif area.is_in_group("enemy2"):
 		bouncefunc(650)
-		point.emit()
+		point.emit(1 * damage)
 	elif area.is_in_group("enemy3"):
 		bouncefunc(300)
-		point.emit()
+		point.emit(1 * damage)
 	elif area.is_in_group("boss"):
-		point.emit()
+		point.emit(5 * damage)
 		bouncefunc(600)
 		
 
@@ -63,5 +67,9 @@ func clamp_to_screen() -> void:
 
 
 func _on_lose_finished() -> void:
-	get_tree().paused = false
-	get_tree().call_deferred("reload_current_scene")
+	$Countdown.play()
+	
+
+
+func _on_countdown_finished() -> void:
+	gravity = 15
