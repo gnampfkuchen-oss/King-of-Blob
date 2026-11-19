@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dpwnkptxjmhuh" path="res://Scenes/enemy1_R.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://b4votsl1qhwnv" path="res://Scenes/enemy2_L.tscn" id="8_6iyac"]
 [ext_resource type="PackedScene" uid="uid://bp0gnlblxc7ox" path="res://Scenes/enemy3_L.tscn" id="9_fdnlq"]
+[ext_resource type="Script" uid="uid://bnqg3udng60m8" path="res://Scripts/camera_2d.gd" id="11_d1ilt"]
+[ext_resource type="Texture2D" uid="uid://bk75j7xl8dcxq" path="res://Assets/Graphics/tronesaal.png" id="12_6iyac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
 size = Vector2(24.75, 14)
@@ -21,7 +23,7 @@ script = ExtResource("1_8gbba")
 [node name="Arena" type="StaticBody2D" parent="." unique_id=1277637875]
 
 [node name="ground" type="CollisionShape2D" parent="Arena" unique_id=302052746]
-position = Vector2(578, 640)
+position = Vector2(578.00006, 638.99994)
 scale = Vector2(59.207085, -1.9795862)
 shape = SubResource("RectangleShape2D_23856")
 
@@ -36,7 +38,7 @@ spawn_scene3 = ExtResource("9_fdnlq")
 autostart = true
 
 [node name="Player" parent="." unique_id=83968270 instance=ExtResource("1_jjgbg")]
-position = Vector2(550, 159.055)
+position = Vector2(540, 153)
 
 [node name="Spawner R" type="Node2D" parent="." unique_id=526468442]
 position = Vector2(1219, 600)
@@ -51,6 +53,20 @@ autostart = true
 [node name="UI" parent="." unique_id=1071254360 instance=ExtResource("2_21xkr")]
 visible = false
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1868890041]
+position = Vector2(557, 343)
+script = ExtResource("11_d1ilt")
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=2030882292]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Tronesaal" type="Sprite2D" parent="Background" unique_id=1251588431]
+position = Vector2(577.5, 325)
+scale = Vector2(5, 5)
+texture = ExtResource("12_6iyac")
+
 [connection signal="timeout" from="Spawner L/Timer" to="Spawner L" method="_on_timer_timeout"]
 [connection signal="point" from="Player" to="." method="_on_player_point"]
+[connection signal="point" from="Player" to="Camera2D" method="_on_player_point"]
 [connection signal="timeout" from="Spawner R/Timer" to="Spawner R" method="_on_timer_timeout"]

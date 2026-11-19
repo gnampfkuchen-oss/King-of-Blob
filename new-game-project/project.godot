@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://du61kcsc8xa3f"
 Musik="*uid://dsu6oup1v63dy"
+ConfigFileHandler="*uid://n7opxts6dsb3"
 
 [display]
 

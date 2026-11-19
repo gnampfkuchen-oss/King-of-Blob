@@ -48,7 +48,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	$smash.play()
 	if area.is_in_group("enemy1"):
-		bouncefunc(600)
+		bouncefunc(550)
 		point.emit(1 * damage)
 	elif area.is_in_group("enemy2"):
 		bouncefunc(650)
@@ -56,6 +56,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	elif area.is_in_group("enemy3"):
 		bouncefunc(300)
 		point.emit(1 * damage)
+		#$Dust.emitting = true
 	elif area.is_in_group("boss"):
 		point.emit(5 * damage)
 		bouncefunc(600)
@@ -69,7 +70,6 @@ func clamp_to_screen() -> void:
 func _on_lose_finished() -> void:
 	$Countdown.play()
 	
-
 
 func _on_countdown_finished() -> void:
 	gravity = 15

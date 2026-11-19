@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dlk2uh0q8i5q" path="res://Assets/Sounds/lose.mp3" id="6_x3wgy"]
 [ext_resource type="FontFile" uid="uid://b65vgsjbe3pqt" path="res://Assets/Thin Sans.ttf" id="7_3smsa"]
 [ext_resource type="AudioStream" uid="uid://dhkfifwa5yrsa" path="res://Assets/Sounds/countdown.mp3" id="7_8erm5"]
+[ext_resource type="Texture2D" uid="uid://cnyw48yxawclf" path="res://Assets/Graphics/dustparticle1.png" id="9_f1ek2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ejmsa"]
 radius = 36.0
@@ -83,6 +84,27 @@ offset_bottom = -49.0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("7_3smsa")
 text = "Press any Button to start."
+
+[node name="Dust" type="CPUParticles2D" parent="." unique_id=572248935]
+position = Vector2(0, 23)
+rotation = 1.5707964
+emitting = false
+amount = 10
+texture = ExtResource("9_f1ek2")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+lifetime_randomness = 1.0
+emission_shape = 6
+emission_ring_inner_radius = 0.8
+emission_ring_radius = 1.0
+direction = Vector2(10, 6)
+spread = 140.0
+gravity = Vector2(0, 750)
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+color = Color(0.3466132, 0.056505345, 0.085510366, 1)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

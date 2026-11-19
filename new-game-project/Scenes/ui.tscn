@@ -2,7 +2,6 @@
 
 [ext_resource type="FontFile" uid="uid://b65vgsjbe3pqt" path="res://Assets/Thin Sans.ttf" id="1_jxero"]
 [ext_resource type="Script" uid="uid://c2yqybr8u0cd" path="res://Scripts/ui.gd" id="1_nf4gj"]
-[ext_resource type="Texture2D" uid="uid://bk75j7xl8dcxq" path="res://Assets/Graphics/tronesaal.png" id="4_2246s"]
 
 [node name="UI" type="CanvasLayer" unique_id=299683093]
 process_mode = 3
@@ -16,28 +15,23 @@ transform = Transform2D(1, 0, 0, 1, 82.655, 26.185)
 metadata/_edit_group_ = true
 
 [node name="Pointlabel" type="Label" parent="Points" unique_id=984591047]
-offset_left = 11.0
-offset_right = 141.0
-offset_bottom = 50.0
-theme_override_constants/outline_size = 7
+offset_left = -49.655
+offset_top = -14.184999
+offset_right = 112.345
+offset_bottom = 50.815002
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_jxero")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 26
 text = "Points: "
+metadata/_edit_use_anchors_ = true
 
-[node name="Points" type="Label" parent="Points" unique_id=748788024]
-offset_left = 120.0
-offset_top = 1.0
-offset_right = 240.0
-offset_bottom = 51.0
-theme_override_constants/outline_size = 7
+[node name="Points" type="Label" parent="Points" unique_id=1614200075]
+offset_left = 96.345
+offset_top = -14.184999
+offset_right = 256.69
+offset_bottom = 50.815002
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_jxero")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 26
 text = "0"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1763689367]
-layer = -1
-
-[node name="Tronesaal" type="Sprite2D" parent="CanvasLayer" unique_id=1716690077]
-position = Vector2(574.9999, 322.00003)
-scale = Vector2(5, 5)
-texture = ExtResource("4_2246s")
+metadata/_edit_use_anchors_ = true
