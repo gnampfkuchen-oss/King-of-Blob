@@ -1,10 +1,12 @@
 extends CharacterBody2D
 
 var gravity = 0
-var speed = 10
+var speed = 8.5
 var damage = 5
+var tween: Tween
 
 signal point(pointss: int)
+signal shake(intensity, duration)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +22,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("left") and not is_on_floor():
 		position.x -= speed
 
+	if velocity.y > 250:
+		squeeze()
 	if velocity.y > 0:
 		$AnimatedSprite2D.play("down")
 	if velocity.y < 0:
@@ -46,16 +50,20 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	squash()
 	$smash.play()
 	if area.is_in_group("enemy1"):
-		bouncefunc(550)
+		bouncefunc(randi_range(520,580))
 		point.emit(1 * damage)
+		shake.emit(3, 0.35)
 	elif area.is_in_group("enemy2"):
-		bouncefunc(650)
+		bouncefunc(randi_range(615,665))
 		point.emit(1 * damage)
+		shake.emit(7.5, 0.25)
 	elif area.is_in_group("enemy3"):
-		bouncefunc(300)
+		bouncefunc(randi_range(270,320))
 		point.emit(1 * damage)
+		shake.emit(11, 0.7)
 		#$Dust.emitting = true
 	elif area.is_in_group("boss"):
 		point.emit(5 * damage)
@@ -73,3 +81,21 @@ func _on_lose_finished() -> void:
 
 func _on_countdown_finished() -> void:
 	gravity = 15
+
+func squash():
+	reset_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property($AnimatedSprite2D, "scale", Vector2(5.7,4), 0.15)
+	await get_tree().create_timer(0.15).timeout
+	reset_tween()
+	tween.tween_property($AnimatedSprite2D, "scale", Vector2(5,5), 0.35)
+
+func squeeze():
+	reset_tween()
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property($AnimatedSprite2D, "scale", Vector2(5,6.5), 0.25)
+
+func reset_tween() -> void:
+	if tween:
+		tween.kill()
+	tween = create_tween()

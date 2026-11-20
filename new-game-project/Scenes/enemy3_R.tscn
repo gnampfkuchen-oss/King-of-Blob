@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dea5lq7tslo68"]
 
 [ext_resource type="Script" uid="uid://bmmdwf3emwxgv" path="res://Scripts/enemy_3_R.gd" id="1_pvnoo"]
-[ext_resource type="Texture2D" uid="uid://b1g6arokoesth" path="res://Assets/Graphics/enemysmash.png" id="3_86ya5"]
+[ext_resource type="Texture2D" uid="uid://daxq2kueh4hoq" path="res://Assets/Graphics/enemy3Ssmash.png" id="2_wjtl2"]
 [ext_resource type="Texture2D" uid="uid://c78y3hnj5y7u8" path="res://Assets/Graphics/enemy3.png" id="3_wjtl2"]
 [ext_resource type="Texture2D" uid="uid://c186htaw3stnl" path="res://Assets/Graphics/enemy3walk.png" id="4_fech1"]
 
@@ -13,7 +13,7 @@ height = 51.85369
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_86ya5")
+"texture": ExtResource("2_wjtl2")
 }],
 "loop": 1,
 "name": &"smashed",
@@ -42,6 +42,6 @@ shape = SubResource("CapsuleShape2D_mn6dk")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1760980456]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_qrom4")
-animation = &"walk"
+animation = &"smashed"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -11,11 +11,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (position.x >= 1150):
+	if (position.x >= 1115):
 		speed = speed * -1
 		$AnimatedSprite2D.flip_h = true
-	elif (position.x <= 0):
+	elif (position.x <= 5):
 		speed = speed * -1
+		$AnimatedSprite2D.flip_h = false
 	position.x += speed * delta
 	
 func _on_body_entered(body: Node2D) -> void:

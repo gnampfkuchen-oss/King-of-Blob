@@ -2,36 +2,56 @@
 
 [ext_resource type="FontFile" uid="uid://b65vgsjbe3pqt" path="res://Assets/Thin Sans.ttf" id="1_jxero"]
 [ext_resource type="Script" uid="uid://c2yqybr8u0cd" path="res://Scripts/ui.gd" id="1_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://cgtoyrtunu8kv" path="res://Assets/Graphics/menu.png" id="3_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://bj61flfqpew5m" path="res://Assets/Graphics/upgradebase.png" id="4_2246s"]
+[ext_resource type="Texture2D" uid="uid://muq3djl4abbu" path="res://Assets/Graphics/enemyupgrade1.png" id="4_smcll"]
+[ext_resource type="Texture2D" uid="uid://bmncj0tysa700" path="res://Assets/Graphics/enemyupgrade2.png" id="5_ryf15"]
+[ext_resource type="Texture2D" uid="uid://d2uibdek00eff" path="res://Assets/Graphics/enemyupgrade3.png" id="6_mmixe"]
 
-[node name="UI" type="CanvasLayer" unique_id=299683093]
+[node name="UI" type="Control" unique_id=274697119]
 process_mode = 3
-layer = 2
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_nf4gj")
 
-[node name="Points" type="CanvasLayer" parent="." unique_id=1234454265]
-layer = 3
-offset = Vector2(82.655, 26.185)
-transform = Transform2D(1, 0, 0, 1, 82.655, 26.185)
-metadata/_edit_group_ = true
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1679878974]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 10
 
-[node name="Pointlabel" type="Label" parent="Points" unique_id=984591047]
-offset_left = -49.655
-offset_top = -14.184999
-offset_right = 112.345
-offset_bottom = 50.815002
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("1_jxero")
-theme_override_font_sizes/font_size = 26
-text = "Points: "
-metadata/_edit_use_anchors_ = true
+[node name="Menu" type="Sprite2D" parent="MarginContainer" unique_id=1291502981]
+position = Vector2(576.00006, 320)
+scale = Vector2(5, 5)
+texture = ExtResource("3_nf4gj")
 
-[node name="Points" type="Label" parent="Points" unique_id=1614200075]
-offset_left = 96.345
-offset_top = -14.184999
-offset_right = 256.69
-offset_bottom = 50.815002
-theme_override_constants/outline_size = 10
+[node name="Upgradebase" type="Sprite2D" parent="MarginContainer/Menu" unique_id=105299014]
+position = Vector2(-7.6293945e-06, 3.8146973e-06)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_2246s")
+
+[node name="Enemyupgrade1" type="Sprite2D" parent="MarginContainer/Menu" unique_id=657232243]
+position = Vector2(-24.40002, 0)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_smcll")
+
+[node name="Enemyupgrade2" type="Sprite2D" parent="MarginContainer/Menu" unique_id=65124083]
+position = Vector2(-45.200024, 1.9073486e-06)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_ryf15")
+
+[node name="Enemyupgrade3" type="Sprite2D" parent="MarginContainer/Menu" unique_id=1493549163]
+position = Vector2(-66.00003, 1.9073486e-06)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("6_mmixe")
+
+[node name="Points" type="Label" parent="MarginContainer" unique_id=984591047]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_jxero")
-theme_override_font_sizes/font_size = 26
-text = "0"
+theme_override_font_sizes/font_size = 24
+text = "Points: 0"
 metadata/_edit_use_anchors_ = true

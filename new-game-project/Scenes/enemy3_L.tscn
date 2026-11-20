@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bp0gnlblxc7ox"]
 
 [ext_resource type="Script" uid="uid://um32t37ttn6v" path="res://Scripts/enemy_3_L.gd" id="1_dvsmb"]
-[ext_resource type="Texture2D" uid="uid://b1g6arokoesth" path="res://Assets/Graphics/enemysmash.png" id="3_dw1wm"]
+[ext_resource type="Texture2D" uid="uid://daxq2kueh4hoq" path="res://Assets/Graphics/enemy3Ssmash.png" id="2_wj2ik"]
 [ext_resource type="Texture2D" uid="uid://c78y3hnj5y7u8" path="res://Assets/Graphics/enemy3.png" id="3_wj2ik"]
 [ext_resource type="Texture2D" uid="uid://c186htaw3stnl" path="res://Assets/Graphics/enemy3walk.png" id="4_w44ko"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_dw1wm")
+"texture": ExtResource("2_wj2ik")
 }],
 "loop": 1,
 "name": &"smashed",
@@ -37,8 +37,7 @@ script = ExtResource("1_dvsmb")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=395247352]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_pw11d")
-animation = &"walk"
-frame_progress = 0.8062083
+animation = &"smashed"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1301786473]
 position = Vector2(-1.1920929e-07, -8)

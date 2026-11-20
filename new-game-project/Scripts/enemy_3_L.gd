@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 @export var speed: float = 100.0
 @export var child: PackedScene
 
@@ -18,8 +18,8 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		var szene1 = load("res://Scenes/enemy1_L.tscn")
-		var szene2 = load("res://Scenes/enemy1_L.tscn")
+		var szene1 = load("res://Scenes/enemy3S_L.tscn")
+		var szene2 = load("res://Scenes/enemy3S_R.tscn")
 		$AnimatedSprite2D.play("smashed")
 		await get_tree().create_timer(0.2).timeout
 		speed = 0

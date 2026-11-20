@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqhbqjgv43sbb"
-path="res://.godot/imported/enemywalk-BOOK-4FT52BR08R.png-39f45375c81cae5f2440d2f72edcda47.ctex"
+uid="uid://bj61flfqpew5m"
+path="res://.godot/imported/upgradebase.png-992e4cd8fe696436a5001039394b569a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Graphics/enemywalk-BOOK-4FT52BR08R.png"
-dest_files=["res://.godot/imported/enemywalk-BOOK-4FT52BR08R.png-39f45375c81cae5f2440d2f72edcda47.ctex"]
+source_file="res://Assets/Graphics/upgradebase.png"
+dest_files=["res://.godot/imported/upgradebase.png-992e4cd8fe696436a5001039394b569a.ctex"]
 
 [params]
 

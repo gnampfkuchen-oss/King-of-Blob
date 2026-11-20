@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bk75j7xl8dcxq" path="res://Assets/Graphics/tronesaal.png" id="12_6iyac"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
-size = Vector2(24.75, 14)
+size = Vector2(24.75, 11.618576)
 
 [node name="Main" type="Node2D" unique_id=942728068]
 position = Vector2(19, -19)
@@ -23,7 +23,7 @@ script = ExtResource("1_8gbba")
 [node name="Arena" type="StaticBody2D" parent="." unique_id=1277637875]
 
 [node name="ground" type="CollisionShape2D" parent="Arena" unique_id=302052746]
-position = Vector2(578.00006, 638.99994)
+position = Vector2(578.00006, 644.5)
 scale = Vector2(59.207085, -1.9795862)
 shape = SubResource("RectangleShape2D_23856")
 
@@ -38,7 +38,7 @@ spawn_scene3 = ExtResource("9_fdnlq")
 autostart = true
 
 [node name="Player" parent="." unique_id=83968270 instance=ExtResource("1_jjgbg")]
-position = Vector2(540, 153)
+position = Vector2(541, 153)
 
 [node name="Spawner R" type="Node2D" parent="." unique_id=526468442]
 position = Vector2(1219, 600)
@@ -52,6 +52,10 @@ autostart = true
 
 [node name="UI" parent="." unique_id=1071254360 instance=ExtResource("2_21xkr")]
 visible = false
+offset_left = -19.0
+offset_top = 19.0
+offset_right = -19.0
+offset_bottom = 19.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1868890041]
 position = Vector2(557, 343)
@@ -68,5 +72,5 @@ texture = ExtResource("12_6iyac")
 
 [connection signal="timeout" from="Spawner L/Timer" to="Spawner L" method="_on_timer_timeout"]
 [connection signal="point" from="Player" to="." method="_on_player_point"]
-[connection signal="point" from="Player" to="Camera2D" method="_on_player_point"]
+[connection signal="shake" from="Player" to="Camera2D" method="_on_player_shake"]
 [connection signal="timeout" from="Spawner R/Timer" to="Spawner R" method="_on_timer_timeout"]
