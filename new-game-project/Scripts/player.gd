@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
 var gravity = 0
-var speed = 8.5
+var speed = 140.0
+var max_speed = 350.0
+var acceleration = 920.0
+var deceleration = 4000.0
 var damage = 5
 var tween: Tween
 
@@ -18,11 +21,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("right") and not is_on_floor():
-		position.x += speed
-	if Input.is_action_pressed("left") and not is_on_floor():
-		position.x -= speed
+		speed = move_toward(speed, 1 * max_speed, acceleration * (3 if speed < 0 else 1) * delta)
+	elif Input.is_action_pressed("left") and not is_on_floor():
+		speed = move_toward(speed, -1 * max_speed, acceleration * (3 if speed > 0 else 1) * delta)
+	else:
+		speed = move_toward(speed, 0.0, deceleration * delta)
 
-	if velocity.y > 250:
+	if velocity.y > 225:
 		squeeze()
 	if velocity.y > 0:
 		$AnimatedSprite2D.play("down")
@@ -31,7 +36,9 @@ func _process(delta: float) -> void:
 	if velocity.y == 0:
 		$AnimatedSprite2D.play("default")
 	
+	velocity.x =speed
 	velocity.y += gravity
+	velocity.y = clamp(velocity.y, -700.0, 700.0)
 	position += velocity * delta
 	move_and_slide()
 	clamp_to_screen()
@@ -64,7 +71,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		bouncefunc(randi_range(270,320))
 		point.emit(1 * damage)
 		shake.emit(11, 0.7)
-		#$Dust.emitting = true
+		$Bigparticle1.emitting = true
+		$Bigparticle2.emitting = true
 	elif area.is_in_group("boss"):
 		point.emit(5 * damage)
 		bouncefunc(600)

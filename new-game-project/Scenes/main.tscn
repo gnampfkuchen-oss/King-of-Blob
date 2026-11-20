@@ -16,6 +16,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23856"]
 size = Vector2(24.75, 11.618576)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6iyac"]
+
 [node name="Main" type="Node2D" unique_id=942728068]
 position = Vector2(19, -19)
 script = ExtResource("1_8gbba")
@@ -69,6 +71,31 @@ follow_viewport_enabled = true
 position = Vector2(577.5, 325)
 scale = Vector2(5, 5)
 texture = ExtResource("12_6iyac")
+
+[node name="ceiling" type="StaticBody2D" parent="." unique_id=58544476]
+
+[node name="Area2D" type="CollisionShape2D" parent="ceiling" unique_id=1956731944]
+position = Vector2(554, -13.000061)
+scale = Vector2(59.207085, -1.9795862)
+shape = SubResource("RectangleShape2D_23856")
+
+[node name="touchcontrol" type="Node2D" parent="." unique_id=1406090449]
+visible = false
+position = Vector2(-19, 19)
+
+[node name="right" type="TouchScreenButton" parent="touchcontrol" unique_id=684215010]
+position = Vector2(864, 320)
+scale = Vector2(29, 33)
+shape = SubResource("RectangleShape2D_6iyac")
+action = "right"
+visibility_mode = 1
+
+[node name="left" type="TouchScreenButton" parent="touchcontrol" unique_id=1584130092]
+position = Vector2(280, 320)
+scale = Vector2(29, 33)
+shape = SubResource("RectangleShape2D_6iyac")
+action = "left"
+visibility_mode = 1
 
 [connection signal="timeout" from="Spawner L/Timer" to="Spawner L" method="_on_timer_timeout"]
 [connection signal="point" from="Player" to="." method="_on_player_point"]

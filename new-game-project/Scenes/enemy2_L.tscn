@@ -3,17 +3,42 @@
 [ext_resource type="Script" uid="uid://crqme2m8rf1p2" path="res://Scripts/enemy_2_L.gd" id="1_ash1l"]
 [ext_resource type="Texture2D" uid="uid://dt2hymiiy1ddv" path="res://Assets/Graphics/enemy2smash.png" id="2_kmoql"]
 [ext_resource type="Texture2D" uid="uid://cbstdo6rid575" path="res://Assets/Graphics/enemy2.png" id="3_1j8x2"]
+[ext_resource type="Texture2D" uid="uid://b8uls4droqbyl" path="res://Assets/Graphics/empty.png" id="3_frxw7"]
 [ext_resource type="Texture2D" uid="uid://c2x6sx01y6lb3" path="res://Assets/Graphics/enemy2walk.png" id="4_frxw7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ejmsa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_1j8x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frxw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1j8x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frxw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kmoql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frxw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kmoql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frxw7")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_kmoql")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"smashed",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,

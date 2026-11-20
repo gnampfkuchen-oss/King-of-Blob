@@ -22,5 +22,5 @@ func _on_body_entered(body: Node2D) -> void:
 		$AnimatedSprite2D.play("smashed")
 		await get_tree().create_timer(0.1).timeout
 		speed = 0
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.75).timeout
 		queue_free()
